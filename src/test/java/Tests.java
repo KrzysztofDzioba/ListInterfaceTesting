@@ -10,6 +10,7 @@ public class Tests {
         ArrayListTests.addAllCollection();
         ArrayListTests.addCollectionAtSpecificIndex();
         ArrayListTests.testClear();
+        ArrayListTests.testContains();
 
     }
 
@@ -19,6 +20,7 @@ public class Tests {
         LinkedListTests.addAllCollection();
         LinkedListTests.addCollectionAtSpecificIndex();
         LinkedListTests.testClear();
+        LinkedListTests.testContains();
 
     }
 }

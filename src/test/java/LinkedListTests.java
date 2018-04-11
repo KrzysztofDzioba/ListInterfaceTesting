@@ -74,4 +74,16 @@ public class LinkedListTests {
         assert linkedList.size() == 0 : "Error";
     }
 
+    //boolean contains(Object o);
+    public static void testContains() {
+        //given
+        List<Integer> linkedList = new LinkedList<>();
+        linkedList.add(5);
+        Boolean contains;
+        //when
+        contains = linkedList.contains(5);
+        //then
+        assert contains : "Error";
+    }
+
 }

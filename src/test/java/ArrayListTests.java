@@ -75,5 +75,18 @@ public class ArrayListTests {
         //then
         assert arrayList.size() == 0 : "Error";
     }
+
+    //boolean contains(Object o);
+    public static void testContains() {
+        //given
+        List<Integer> arrayList = new ArrayList<>();
+        arrayList.add(5);
+        Boolean contains;
+        //when
+        contains = arrayList.contains(5);
+
+        //then
+        assert contains : "Error";
+    }
 }
 
