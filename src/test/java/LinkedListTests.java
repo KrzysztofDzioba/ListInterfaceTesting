@@ -63,4 +63,15 @@ public class LinkedListTests {
         assert linkedList.get(0) == 0 : "Error";
     }
 
+    //clear();
+    public static void testClear() {
+        //given
+        List<Integer> linkedList = new LinkedList<>();
+        linkedList.add(1);
+        //when
+        linkedList.clear();
+        //then
+        assert linkedList.size() == 0 : "Error";
+    }
+
 }

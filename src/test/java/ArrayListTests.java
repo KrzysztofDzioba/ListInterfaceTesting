@@ -64,5 +64,16 @@ public class ArrayListTests {
         assert arrayList.get(1) == 2 : "Error";
         assert arrayList.get(0) == 0 : "Error";
     }
+
+    //clear();
+    public static void testClear() {
+        //given
+        List<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        //when
+        arrayList.clear();
+        //then
+        assert arrayList.size() == 0 : "Error";
+    }
 }
 

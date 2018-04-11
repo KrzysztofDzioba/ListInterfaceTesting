@@ -5,20 +5,20 @@ public class Tests {
     }
 
     private static void runArrayListTests() {
-        ArrayListTests arrayListTests = new ArrayListTests();
         ArrayListTests.testAddObject();
         ArrayListTests.testAddObjectOnSpecificPosition();
         ArrayListTests.addAllCollection();
         ArrayListTests.addCollectionAtSpecificIndex();
+        ArrayListTests.testClear();
 
     }
 
     private static void runLinkedListTests() {
-        LinkedListTests linkedListTests = new LinkedListTests();
         LinkedListTests.testAddObject();
         LinkedListTests.testAddObjectOnSpecificPosition();
         LinkedListTests.addAllCollection();
         LinkedListTests.addCollectionAtSpecificIndex();
+        LinkedListTests.testClear();
 
     }
 }
