@@ -124,17 +124,18 @@ public class LinkedListTests {
         assert value == 1 : "Test not passed in linked list";
     }
 
+    //int hashCode();
 
-
-
-
-
-
-
-
-
-
-
+    //int indexOf(Object o);
+    public static void returnIndexOfFirstOccurrenceOfElement() {
+        //given
+        List<Integer> linkedList = simpleLinkedListWithBasicValues();
+        Integer value;
+        //when
+        value = linkedList.indexOf(3);
+        //then
+        assert value == 2 : "Test not passed in linked list";
+    }
 
 
 

@@ -127,11 +127,18 @@ public class ArrayListTests {
         assert value == 1 : "Test not passed in arraylist";
     }
 
+    //int hashCode();
 
-
-
-
-
+    //int indexOf(Object o);
+    public static void returnIndexOfFirstOccurrenceOfElement() {
+        //given
+        List<Integer> arrayList = simpleArrayListWithBasicValues();
+        Integer value;
+        //when
+        value = arrayList.indexOf(3);
+        //then
+        assert value == 2 : "Test not passed in arraylist";
+    }
 
 
 

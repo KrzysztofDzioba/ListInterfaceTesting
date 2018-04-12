@@ -14,6 +14,7 @@ public class Tests {
         ArrayListTests.containsAllElementsOfPassedCollection();
         ArrayListTests.listIsEqualWithAnotherIfTheyHaveSameObjectsInside();
         ArrayListTests.givesElementOfSpecifiedPosition();
+        ArrayListTests.returnIndexOfFirstOccurrenceOfElement();
 
     }
 
@@ -27,6 +28,7 @@ public class Tests {
         LinkedListTests.containsAllElementsOfPassedCollection();
         LinkedListTests.listIsEqualWithAnotherIfTheyHaveSameObjectsInside();
         LinkedListTests.givesElementOfSpecifiedPosition();
+        LinkedListTests.returnIndexOfFirstOccurrenceOfElement();
 
     }
 }
