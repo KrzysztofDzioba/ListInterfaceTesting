@@ -115,6 +115,32 @@ public class ArrayListTests {
         assert equals : "Test not passed in arraylist (equals)";
     }
 
+    //E get(int index);
+    public static void givesElementOfSpecifiedPosition() {
+        //given
+        List<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        Integer value;
+        //when
+        value = arrayList.get(0);
+        //then
+        assert value == 1 : "Test not passed in arraylist";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private static ArrayList<Integer> simpleArrayListWithBasicValues() {
         return new ArrayList<>(Arrays.asList(1,2,3));
     }

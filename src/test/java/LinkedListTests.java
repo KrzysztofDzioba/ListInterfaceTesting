@@ -112,6 +112,36 @@ public class LinkedListTests {
         assert equals : "Test not passed in linkedList (equals)";
     }
 
+    // E get(int index);
+    public static void givesElementOfSpecifiedPosition() {
+        //given
+        List<Integer> linkedList = new LinkedList<>();
+        linkedList.add(1);
+        Integer value;
+        //when
+        value = linkedList.get(0);
+        //then
+        assert value == 1 : "Test not passed in linked list";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private static LinkedList<Integer> simpleLinkedListWithBasicValues() {
         return new LinkedList<>(Arrays.asList(1,2,3));
     }

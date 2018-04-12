@@ -13,6 +13,7 @@ public class Tests {
         ArrayListTests.checkWhetherListContainsSpecificObject();
         ArrayListTests.containsAllElementsOfPassedCollection();
         ArrayListTests.listIsEqualWithAnotherIfTheyHaveSameObjectsInside();
+        ArrayListTests.givesElementOfSpecifiedPosition();
 
     }
 
@@ -25,6 +26,7 @@ public class Tests {
         LinkedListTests.checkWhetherListContainsSpecificObject();
         LinkedListTests.containsAllElementsOfPassedCollection();
         LinkedListTests.listIsEqualWithAnotherIfTheyHaveSameObjectsInside();
+        LinkedListTests.givesElementOfSpecifiedPosition();
 
     }
 }
