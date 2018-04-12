@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ArrayListTests {
@@ -87,6 +88,19 @@ public class ArrayListTests {
 
         //then
         assert contains : "Error";
+    }
+
+    //boolean containsAll(Collection<?> c);
+    public static void testContainsAll() {
+        //given
+        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> newList = Arrays.asList(1, 2, 3);
+        arrayList.addAll(newList);
+        Boolean containsAll;
+        //when
+        containsAll = arrayList.containsAll(newList);
+        //then
+        assert containsAll : "containsAll() failed";
     }
 }
 

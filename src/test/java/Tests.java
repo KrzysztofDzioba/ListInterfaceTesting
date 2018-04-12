@@ -11,6 +11,7 @@ public class Tests {
         ArrayListTests.addCollectionAtSpecificIndex();
         ArrayListTests.testClear();
         ArrayListTests.testContains();
+        ArrayListTests.testContainsAll();
 
     }
 
@@ -21,6 +22,7 @@ public class Tests {
         LinkedListTests.addCollectionAtSpecificIndex();
         LinkedListTests.testClear();
         LinkedListTests.testContains();
+        LinkedListTests.testContainsAll();
 
     }
 }

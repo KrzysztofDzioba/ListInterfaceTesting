@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -84,6 +85,19 @@ public class LinkedListTests {
         contains = linkedList.contains(5);
         //then
         assert contains : "Error";
+    }
+
+    //boolean containsAll(Collection<?> c);
+    public static void testContainsAll() {
+        //given
+        List<Integer> linkedList = new LinkedList<>();
+        List<Integer> newList = Arrays.asList(1, 2, 3);
+        linkedList.addAll(newList);
+        Boolean containsAll;
+        //when
+        containsAll = linkedList.containsAll(newList);
+        //then
+        assert containsAll : "containsAll() failed";
     }
 
 }
