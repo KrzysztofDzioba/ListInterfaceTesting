@@ -140,6 +140,28 @@ public class ArrayListTests {
         assert value == 2 : "Test not passed in arraylist";
     }
 
+    //boolean isEmpty();
+    public static void returnsTrueIfListIsEmpty() {
+        //given
+        List<Integer> arrayList = new ArrayList<>();
+        Boolean empty;
+        //when
+        empty = arrayList.isEmpty();
+        //then
+        assert empty;
+    }
+
+    //boolean isEmpty();
+    public static void returnsFalseIfListIsNotEmpty() {
+        //given
+        List<Integer> arrayList = simpleArrayListWithBasicValues();
+        Boolean empty;
+        //when
+        empty = arrayList.isEmpty();
+        //then
+        assert !empty;
+    }
+
 
 
 

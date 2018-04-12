@@ -137,6 +137,28 @@ public class LinkedListTests {
         assert value == 2 : "Test not passed in linked list";
     }
 
+    //boolean isEmpty();
+    public static void returnsTrueIfListIsEmpty() {
+        //given
+        List<Integer> linkedList = new LinkedList<>();
+        Boolean empty;
+        //when
+        empty = linkedList.isEmpty();
+        //then
+        assert empty;
+    }
+
+    //boolean isEmpty();
+    public static void returnsFalseIfListIsNotEmpty() {
+        //given
+        List<Integer> linkedList = simpleLinkedListWithBasicValues();
+        boolean empty;
+        //when
+        empty = linkedList.isEmpty();
+        //then
+        assert !empty;
+    }
+
 
 
 

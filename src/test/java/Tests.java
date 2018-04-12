@@ -1,3 +1,5 @@
+import sun.awt.image.ImageWatched;
+
 public class Tests {
     public static void main(String[] args) {
         runArrayListTests();
@@ -15,6 +17,8 @@ public class Tests {
         ArrayListTests.listIsEqualWithAnotherIfTheyHaveSameObjectsInside();
         ArrayListTests.givesElementOfSpecifiedPosition();
         ArrayListTests.returnIndexOfFirstOccurrenceOfElement();
+        ArrayListTests.returnsTrueIfListIsEmpty();
+        ArrayListTests.returnsFalseIfListIsNotEmpty();
 
     }
 
@@ -29,6 +33,8 @@ public class Tests {
         LinkedListTests.listIsEqualWithAnotherIfTheyHaveSameObjectsInside();
         LinkedListTests.givesElementOfSpecifiedPosition();
         LinkedListTests.returnIndexOfFirstOccurrenceOfElement();
+        LinkedListTests.returnsTrueIfListIsEmpty();
+        LinkedListTests.returnsFalseIfListIsNotEmpty();
 
     }
 }
