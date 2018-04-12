@@ -94,7 +94,7 @@ public class ArrayListTests {
     public static void containsAllElementsOfPassedCollection() {
         //given
         List<Integer> arrayList = new ArrayList<>();
-        List<Integer> newList = Arrays.asList(1, 2, 3);
+        List<Integer> newList = simpleArrayListWithBasicValues();
         arrayList.addAll(newList);
         Boolean containsAll;
         //when
@@ -104,5 +104,19 @@ public class ArrayListTests {
     }
 
     //boolean equals(Object o);
+    public static void listIsEqualWithAnotherIfTheyHaveSameObjectsInside() {
+        //given
+        List<Integer> arrayList = simpleArrayListWithBasicValues();
+        List<Integer> arrayList2 = simpleArrayListWithBasicValues();
+        Boolean equals;
+        //when
+        equals = arrayList.equals(arrayList2);
+        //then
+        assert equals : "Test not passed in arraylist (equals)";
+    }
+
+    private static ArrayList<Integer> simpleArrayListWithBasicValues() {
+        return new ArrayList<>(Arrays.asList(1,2,3));
+    }
 }
 

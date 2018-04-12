@@ -12,6 +12,7 @@ public class Tests {
         ArrayListTests.afterClearingCollectionIsEmpty();
         ArrayListTests.checkWhetherListContainsSpecificObject();
         ArrayListTests.containsAllElementsOfPassedCollection();
+        ArrayListTests.listIsEqualWithAnotherIfTheyHaveSameObjectsInside();
 
     }
 
@@ -23,6 +24,7 @@ public class Tests {
         LinkedListTests.afterClearingCollectionIsEmpty();
         LinkedListTests.checkWhetherListContainsSpecificObject();
         LinkedListTests.containsAllElementsOfPassedCollection();
+        LinkedListTests.listIsEqualWithAnotherIfTheyHaveSameObjectsInside();
 
     }
 }

@@ -91,7 +91,7 @@ public class LinkedListTests {
     public static void containsAllElementsOfPassedCollection() {
         //given
         List<Integer> linkedList = new LinkedList<>();
-        List<Integer> newList = Arrays.asList(1, 2, 3);
+        List<Integer> newList = simpleLinkedListWithBasicValues();
         linkedList.addAll(newList);
         Boolean containsAll;
         //when
@@ -101,5 +101,19 @@ public class LinkedListTests {
     }
 
     //boolean equals(Object o);
+    public static void listIsEqualWithAnotherIfTheyHaveSameObjectsInside() {
+        //given
+        List<Integer> linkedList = simpleLinkedListWithBasicValues();
+        List<Integer> linkedList2 = simpleLinkedListWithBasicValues();
+        Boolean equals;
+        //when
+        equals = linkedList.equals(linkedList2);
+        //then
+        assert equals : "Test not passed in linkedList (equals)";
+    }
+
+    private static LinkedList<Integer> simpleLinkedListWithBasicValues() {
+        return new LinkedList<>(Arrays.asList(1,2,3));
+    }
 
 }
