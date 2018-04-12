@@ -5,24 +5,24 @@ public class Tests {
     }
 
     private static void runArrayListTests() {
-        ArrayListTests.testAddObject();
-        ArrayListTests.testAddObjectOnSpecificPosition();
-        ArrayListTests.addAllCollection();
+        ArrayListTests.shouldAddOneObjectToList();
+        ArrayListTests.shouldAddObjectOnSpecificPosition();
+        ArrayListTests.addOtherCollectionToExistingCollection();
         ArrayListTests.addCollectionAtSpecificIndex();
-        ArrayListTests.testClear();
-        ArrayListTests.testContains();
-        ArrayListTests.testContainsAll();
+        ArrayListTests.afterClearingCollectionIsEmpty();
+        ArrayListTests.checkWhetherListContainsSpecificObject();
+        ArrayListTests.containsAllElementsOfPassedCollection();
 
     }
 
     private static void runLinkedListTests() {
-        LinkedListTests.testAddObject();
-        LinkedListTests.testAddObjectOnSpecificPosition();
-        LinkedListTests.addAllCollection();
+        LinkedListTests.shouldAddOneObjectToList();
+        LinkedListTests.shouldAddObjectOnSpecificPosition();
+        LinkedListTests.addOtherCollectionToExistingCollection();
         LinkedListTests.addCollectionAtSpecificIndex();
-        LinkedListTests.testClear();
-        LinkedListTests.testContains();
-        LinkedListTests.testContainsAll();
+        LinkedListTests.afterClearingCollectionIsEmpty();
+        LinkedListTests.checkWhetherListContainsSpecificObject();
+        LinkedListTests.containsAllElementsOfPassedCollection();
 
     }
 }

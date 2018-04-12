@@ -5,7 +5,7 @@ import java.util.List;
 public class ArrayListTests {
 
     //add(E obj)
-    public static void testAddObject() {
+    public static void shouldAddOneObjectToList() {
         //given
         List<Integer> arrayList = new ArrayList<>();
         //when
@@ -15,7 +15,7 @@ public class ArrayListTests {
     }
 
     //add(int index, E obj)
-    public static void testAddObjectOnSpecificPosition() {
+    public static void shouldAddObjectOnSpecificPosition() {
         //given
         List<Integer> arrayList = new ArrayList<>();
         //when
@@ -28,7 +28,7 @@ public class ArrayListTests {
     }
 
     //addAll(Collection<? extends E> c)
-    public static void addAllCollection() {
+    public static void addOtherCollectionToExistingCollection() {
 
         //given
         List<Integer> arrayList = new ArrayList<>();
@@ -67,7 +67,7 @@ public class ArrayListTests {
     }
 
     //clear();
-    public static void testClear() {
+    public static void afterClearingCollectionIsEmpty() {
         //given
         List<Integer> arrayList = new ArrayList<>();
         arrayList.add(1);
@@ -78,7 +78,7 @@ public class ArrayListTests {
     }
 
     //boolean contains(Object o);
-    public static void testContains() {
+    public static void checkWhetherListContainsSpecificObject() {
         //given
         List<Integer> arrayList = new ArrayList<>();
         arrayList.add(5);
@@ -91,7 +91,7 @@ public class ArrayListTests {
     }
 
     //boolean containsAll(Collection<?> c);
-    public static void testContainsAll() {
+    public static void containsAllElementsOfPassedCollection() {
         //given
         List<Integer> arrayList = new ArrayList<>();
         List<Integer> newList = Arrays.asList(1, 2, 3);
@@ -102,5 +102,7 @@ public class ArrayListTests {
         //then
         assert containsAll : "containsAll() failed";
     }
+
+    //boolean equals(Object o);
 }
 

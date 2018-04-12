@@ -5,7 +5,7 @@ import java.util.List;
 public class LinkedListTests {
 
     //add(E obj)
-    public static void testAddObject() {
+    public static void shouldAddOneObjectToList() {
         //given
         List<Integer> linkedList = new LinkedList<>();
         //when
@@ -15,7 +15,7 @@ public class LinkedListTests {
     }
 
     //add(int index, E obj)
-    public static void testAddObjectOnSpecificPosition() {
+    public static void shouldAddObjectOnSpecificPosition() {
         //given
         List<Integer> linkedList = new LinkedList<>();
         //when
@@ -27,7 +27,7 @@ public class LinkedListTests {
     }
 
     //addAll(Collection<? extends E> c)
-    public static void addAllCollection() {
+    public static void addOtherCollectionToExistingCollection() {
         //given
         List<Integer> linkedList = new LinkedList<>();
         linkedList.add(0);
@@ -65,7 +65,7 @@ public class LinkedListTests {
     }
 
     //clear();
-    public static void testClear() {
+    public static void afterClearingCollectionIsEmpty() {
         //given
         List<Integer> linkedList = new LinkedList<>();
         linkedList.add(1);
@@ -76,7 +76,7 @@ public class LinkedListTests {
     }
 
     //boolean contains(Object o);
-    public static void testContains() {
+    public static void checkWhetherListContainsSpecificObject() {
         //given
         List<Integer> linkedList = new LinkedList<>();
         linkedList.add(5);
@@ -88,7 +88,7 @@ public class LinkedListTests {
     }
 
     //boolean containsAll(Collection<?> c);
-    public static void testContainsAll() {
+    public static void containsAllElementsOfPassedCollection() {
         //given
         List<Integer> linkedList = new LinkedList<>();
         List<Integer> newList = Arrays.asList(1, 2, 3);
@@ -97,7 +97,9 @@ public class LinkedListTests {
         //when
         containsAll = linkedList.containsAll(newList);
         //then
-        assert containsAll : "containsAll() failed";
+        assert containsAll : "containsAllElementsOfPassedCollection() failed";
     }
+
+    //boolean equals(Object o);
 
 }
