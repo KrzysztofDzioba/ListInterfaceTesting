@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ListTests {
@@ -7,7 +6,7 @@ public class ListTests {
     //add(E obj)
     public static void shouldAddOneObjectToList(List<Integer> list) {
         list.add(1);
-        assert list.size() == 1;
+        assert list.size() == 2;
     }
 
 
@@ -18,7 +17,7 @@ public class ListTests {
         list.add(1, 2);
         assert list.get(1) == 2;
     }
-;
+
     //addAll(Collection<? extends E> c)
     public static void addArrayListToExistingCollection(List<Integer> list) {
         //given
@@ -49,36 +48,36 @@ public class ListTests {
         //then
         assert list.get(1) == 2;
     }
-
-    //clear();
-    public static void afterClearingCollectionIsEmpty(List<Integer> list) {
-        list.add(1);
-        list.clear();
-        assert list.size() == 0;
-    }
-
-    //boolean contains(Object o);
-    public static void checkWhetherListContainsSpecificObject(List<Integer> list) {
-        //given
-        list.add(5);
-        boolean contains;
-        //when
-        contains = list.contains(5);
-        //then
-        assert contains;
-    }
-
-    //boolean containsAll(Collection<?> c);
-    public static void containsAllElementsOfPassedCollection(List<Integer> list) {
-        //given
-        List<Integer> newList = simpleArrayListWithBasicValues();
-        list.addAll(newList);
-        boolean containsAll;
-        //when
-        containsAll = list.containsAll(newList);
-        //then
-        assert containsAll;
-    }
+//
+//    //clear();
+//    public static void afterClearingCollectionIsEmpty(List<Integer> list) {
+//        list.add(1);
+//        list.clear();
+//        assert list.size() == 0;
+//    }
+//
+//    //boolean contains(Object o);
+//    public static void checkWhetherListContainsSpecificObject(List<Integer> list) {
+//        //given
+//        list.add(5);
+//        boolean contains;
+//        //when
+//        contains = list.contains(5);
+//        //then
+//        assert contains;
+//    }
+//
+//    //boolean containsAll(Collection<?> c);
+//    public static void containsAllElementsOfPassedCollection(List<Integer> list) {
+//        //given
+//        List<Integer> newList = simpleArrayListWithBasicValues();
+//        list.addAll(newList);
+//        boolean containsAll;
+//        //when
+//        containsAll = list.containsAll(newList);
+//        //then
+//        assert containsAll;
+//    }
 
 //    //boolean equals(Object o);
 //    public static void listIsEqualWithAnotherIfTheyHaveSameObjectsInside(List<Integer> list) {
@@ -143,8 +142,8 @@ public class ListTests {
 
 
 
-    private static ArrayList<Integer> simpleArrayListWithBasicValues() {
-        return new ArrayList<>(Arrays.asList(1,2,3));
-    }
+//    private static ArrayList<Integer> simpleArrayListWithBasicValues() {
+//        return new ArrayList<>(Arrays.asList(1,2,3));
+//    }
 }
 
