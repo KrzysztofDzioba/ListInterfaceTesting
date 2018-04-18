@@ -259,6 +259,28 @@ public class ListTests {
         assert !allRemoved;
     }
 
+    // void replaceAll(UnaryOperator<E> operator)
+    public static void givenUnaryOperatorTestIfMethodModifyObjectsInsideList(List<Integer> list) {
+        //given
+        list.add(1);
+        //when
+        list.replaceAll(t -> t+1);
+        //then
+        assert list.contains(2);
+    }
+
+    //E set(int index, E element);
+    public static void elementOnSpecifiedIndexIsReplacedByGivenElement(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        Integer simpleValue = 10;
+        //when
+        myList.set(0, simpleValue);
+        //then
+        assert myList.get(0).equals(simpleValue);
+    }
+
+
 
 
 
