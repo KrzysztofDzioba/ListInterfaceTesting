@@ -8,13 +8,58 @@ public class ListTests {
         assert list.size() == 1;
     }
 
+    //add(E obj)
+    public static void returnsTrueAfterAddingOneObjectSuccessfully(List<Integer> list) {
+        boolean stateOfListChanged = list.add(1);
+
+        assert stateOfListChanged;
+    }
+
+//    add(E obj)
+    public static void canAddNullToList(List<Integer> list) {
+        //given
+        list = emptyList(list);
+        //when
+        list.add(null);
+        //then
+        assert list.size() == 1;
+    }
 
     //add(int index, E obj)
     public static void shouldAddObjectOnSpecificPosition(List<Integer> list) {
-        list.add(1);
-        list.add(1);
-        list.add(1, 2);
-        assert list.get(1) == 2;
+        //given
+        List<Integer> myList = new ArrayList<>();
+        myList.addAll(Arrays.asList(1, 1));
+        //when
+        myList.add(1, 2);
+        //then
+        assert myList.get(1) == 2;
+    }
+
+    //add(int index, E obj)
+    public static void incrementRightObjectsIndexBy1WhenAddingElementOnSpecificIndex(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        myList.add(1, 0);
+        //then
+        assert myList.get(2) == 2;
+    }
+
+    //add(int index, E obj)
+    public static void returnsIndexOutOfBoundsExceptionWhenAddingElementOutsideTheList(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        boolean exceptionOccured = false;
+        //when
+        try{
+            int biggerIndexThanArraySize = 10;
+            myList.add(biggerIndexThanArraySize, 0);
+        } catch(IndexOutOfBoundsException e) {
+            exceptionOccured = true;
+        }
+        //then
+        assert exceptionOccured;
     }
 
     //addAll(Collection<? extends E> c)
@@ -415,5 +460,6 @@ public class ListTests {
         Object strangeObject = 666;
         return strangeObject;
     }
+
 }
 
