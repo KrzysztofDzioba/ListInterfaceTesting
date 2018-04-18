@@ -290,6 +290,51 @@ public class ListTests {
         //then
         assert myList.get(0).equals(simpleValue);
     }
+    //E set(int index, E element);
+    public static void returnsPreviousElementOnGivenPositionWhenNewIsSetOnIt(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        Integer simpleValue = 10;
+        //when
+        Integer oldElement = myList.set(0, simpleValue);
+        //then
+        assert oldElement.equals(1);
+    }
+
+    //int size();
+    public static void returnsAppropiateSizeOfTheList(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        int size = myList.size();
+        //then
+        assert size == 3;
+    }
+
+    //void sort(Comparator<? super E> c)
+    public static void whenGivenComparatorListIsSortedCorrectly(List<Integer> list) {
+        //given
+        List<Integer> myList = emptyList(list);
+        myList.addAll(Arrays.asList(3,2,1));
+        //when
+        myList.sort((number, anotherNumber)-> number - anotherNumber);
+        //then
+        assert myList.get(0) == 1;
+    }
+
+    //Spliterator<E> spliterator()
+    public static void methodReturnsSpliteratorObject(List<Integer> list) {
+        //given
+        List<Integer> myList = emptyList(list);
+        //when
+        Spliterator<Integer> spliterator = myList.spliterator();
+        //then
+        assert spliterator != null;
+    }
+
+
+
+
 
 
 
