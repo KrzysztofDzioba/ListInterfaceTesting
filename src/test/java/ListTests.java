@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class ListTests {
 
@@ -161,8 +158,76 @@ public class ListTests {
         assert value == 4;
     }
 
+    //ListIterator<E> listIterator();
+    public static void shouldReturnlistIteratorObject(List<Integer> list) {
+        //given
+        List<Integer> myList = emptyList(list);
+        //when
+        ListIterator<Integer> iterator = myList.listIterator();
+        //then
+        assert iterator != null;
+    }
 
+    //ListIterator<E> listIterator(int index);
+    public static void shouldReturnIteratorOnSpecifiedPosition(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        ListIterator<Integer> iterator = myList.listIterator(1);
+        //then
+        assert iterator.next() == 2;
+    }
 
+    //E remove(int index);
+    public static void shouldRemoveObjectAtSpecifiedIndexFromList(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        myList.remove(2);
+        //then
+        assert myList.size() == 2;
+    }
+
+    //E remove(int index);
+    public static void whenRemovingFromListRemovingObjectIsReturned(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        Integer value = myList.remove(0);
+        //then
+        assert value == 1;
+    }
+
+    //boolean remove(Object o);
+    public static void removeSpecifiedObjectInList(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        myList.remove((Object) 1);
+        //then
+        assert !myList.contains(1);
+    }
+
+    //boolean remove(Object o);
+    public static void returnsTrueIfRemovingObjectWasInList(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        //when
+        boolean objectWasInList = myList.remove((Object) 1);
+        //then
+        assert objectWasInList;
+    }
+
+    //boolean remove(Object o);
+    public static void returnsFalseIfRemovingObjectWasNotInList(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        boolean objectWasInList = myList.remove((Object) 666);
+        //then
+        assert !objectWasInList;
+    }
 
 
 
