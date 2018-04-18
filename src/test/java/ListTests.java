@@ -224,9 +224,39 @@ public class ListTests {
         //given
         List<Integer> myList = simpleListWithBasicValues(list);
         //when
-        boolean objectWasInList = myList.remove((Object) 666);
+        boolean objectWasInList = myList.remove(strangeObject());
         //then
         assert !objectWasInList;
+    }
+
+    //boolean removeAll(Collection<?> c);
+    public static void removesAllObjectsOfGivenCollection(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        myList.removeAll(Arrays.asList(1, 2));
+        //then
+        assert !myList.contains(1) && !myList.contains(2);
+    }
+
+    //boolean removeAll(Collection<?> c);
+    public static void returnsTrueIfAllObjectsFromGivenCollectionWereRemoved(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        boolean allRemoved = myList.removeAll(Arrays.asList(1, 2));
+        //then
+        assert allRemoved;
+    }
+
+    //boolean removeAll(Collection<?> c);
+    public static void returnsFalseIfNotAllObjectsFromGivenCollectionWereRemoved(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        boolean allRemoved = myList.removeAll(Arrays.asList(strangeObject()));
+        //then
+        assert !allRemoved;
     }
 
 
@@ -247,6 +277,11 @@ public class ListTests {
         if(list instanceof ArrayList)
             return new ArrayList<>();
         return new LinkedList<>();
+    }
+
+    private static Object strangeObject() {
+        Object strangeObject = 666;
+        return strangeObject;
     }
 }
 
