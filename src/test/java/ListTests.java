@@ -332,6 +332,61 @@ public class ListTests {
         assert spliterator != null;
     }
 
+    //List<E> subList(int fromIndex, int toIndex);
+    public static void givenFromAndToIndexesCreateSublistWithProperElementsCount(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        List<Integer> mySublist = myList.subList(0, 2);
+        //then
+        assert mySublist.size() == 2;
+    }
+
+    //Object[] toArray();
+    public static void givenListCreateObjectArrayOfIt(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        //when
+        Object[] el = myList.toArray();
+        //then
+        assert el[0].equals(1) && el[1].equals(2) && el[2].equals(3);
+    }
+
+    //<T> T[] toArray(T[] a);
+    public static void givenEmptyArrayTestIfThisArrayIsEqualsToReturnedArrayOfToArrayMethod(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        Integer[] firstArray = new Integer[myList.size()];
+        //when
+        Integer[] secondArray = myList.toArray(firstArray);
+        //then
+        assert firstArray == secondArray;
+    }
+
+    //<T> T[] toArray(T[] a);
+    public static void givenEmptyArrayTestIfInThisArrayAreElementsFromList(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        Integer[] array = new Integer[myList.size()];
+        //when
+        myList.toArray(array);
+        //then
+        assert array[0].equals(myList.get(0)) && array[1].equals(myList.get(1)) && array[2].equals(myList.get(2));
+    }
+
+    //<T> T[] toArray(T[] a);
+    public static void testToArrayMethodGivenEmptyArrayWithSmallSizeTestIfNewArrayIsReturnedinToArrayMethod(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        Integer[] array = new Integer[0];
+        //when
+        Integer[] array2 = myList.toArray(array);
+        //then
+        assert array != array2;
+    }
+
+
+
 
 
 
