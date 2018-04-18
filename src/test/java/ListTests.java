@@ -269,6 +269,17 @@ public class ListTests {
         assert list.contains(2);
     }
 
+    //boolean retainAll(Collection<?> c);
+    public static void retainInListOnlyGivenElementsInCollection(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        list.add(1);
+        //when
+        myList.retainAll(list);
+        //then
+        assert myList.size() == 1 && myList.get(0) == 1;
+    }
+
     //E set(int index, E element);
     public static void elementOnSpecifiedIndexIsReplacedByGivenElement(List<Integer> list) {
         //given
@@ -288,9 +299,8 @@ public class ListTests {
 
 
     private static List<Integer> simpleListWithBasicValues(List<Integer> list) {
-        if(list instanceof ArrayList){
-            list.addAll(Arrays.asList(1, 2, 3));
-            return list;
+        if(list instanceof ArrayList) {
+            return new ArrayList<>(Arrays.asList(1, 2, 3));
         }
         return new LinkedList<>(Arrays.asList(1, 2, 3));
     }

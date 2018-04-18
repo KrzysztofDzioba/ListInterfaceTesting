@@ -30,7 +30,6 @@ public class Tests {
                     Tests.createEmptyLists();
                     futures.add(runTestInNewThread(s, arrayList));
                     futures.add(runTestInNewThread(s, linkedList));
-                    Tests.createEmptyLists();
         });
         executor.shutdown();
         int counter = 0;
