@@ -9,7 +9,6 @@ public class TestThread extends Thread {
 
     private static final Logger LOGGER = Logger.getLogger(ListTests.class.getName() );
 
-
     public TestThread(Method m, List<Integer> list) {
         this.m = m;
         this.list = list;

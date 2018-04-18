@@ -151,15 +151,15 @@ public class ListTests {
     }
 
     //int lastIndexOf(Object o);
-//    public static void testName(List<Integer> list) {
-//        //given
-//        List<Integer> linkedList = simpleListWithBasicValues(list);
-//
-//        //when
-//
-//        //then
-//        assert false;
-//    }
+    public static void givenElementReturnsLastItsOccurenceInList(List<Integer> list) {
+        //given
+        List<Integer> myList = simpleListWithBasicValues(list);
+        myList.addAll(Arrays.asList(3, 3));
+        //when
+        Integer value = myList.lastIndexOf(3);
+        //then
+        assert value == 4;
+    }
 
 
 
@@ -171,8 +171,10 @@ public class ListTests {
 
 
     private static List<Integer> simpleListWithBasicValues(List<Integer> list) {
-        if(list instanceof ArrayList)
-            return Arrays.asList(1, 2, 3);
+        if(list instanceof ArrayList){
+            list.addAll(Arrays.asList(1, 2, 3));
+            return list;
+        }
         return new LinkedList<>(Arrays.asList(1, 2, 3));
     }
 
