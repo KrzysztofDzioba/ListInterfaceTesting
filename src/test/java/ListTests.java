@@ -189,13 +189,36 @@ public class ListTests {
     }
 
     //boolean containsAll(Collection<?> c);
-    public static void containsAllElementsOfPassedCollection(List<Integer> list) {
+    public static void returnsTrueIfListContainsAllElementsOfPassedCollection(List<Integer> list) {
         //given
         List<Integer> newList = simpleListWithBasicValues(list);
         list.addAll(newList);
         boolean containsAll;
         //when
         containsAll = list.containsAll(newList);
+        //then
+        assert containsAll;
+    }
+
+//    boolean containsAll(Collection<?> c);
+    public static void returnsFalseIfListDoesNotcontainAllElementsOfPassedCollection(List<Integer> list) {
+        //given
+        List<Integer> newList = simpleListWithBasicValues(list);
+        list.addAll(newList);
+        boolean containsAll;
+        //when
+        containsAll = list.containsAll(Arrays.asList(2,3,4));
+        //then
+        assert !containsAll;
+    }
+
+    //boolean containsAll(Collection<?> c);
+    public static void givenCollectionOfNullElementsListContainsAllElementsOfThisCollection(List<Integer> list) {
+        //given
+        List<Integer> myList = Arrays.asList(null, null);
+        list.addAll(myList);
+        //when
+        boolean containsAll = list.containsAll(myList);
         //then
         assert containsAll;
     }
