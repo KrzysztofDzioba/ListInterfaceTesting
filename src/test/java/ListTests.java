@@ -88,16 +88,14 @@ public class ListTests {
     }
 
     //addAll(Collection<? extends E> c)
-//    public static void whenAddingElementsFromAnotherCollectionTheyAreAddedAtTheEnd(List<Integer> list) {
-//        //given
-//        List<Integer> myList = simpleListWithBasicValues(list);
-//        List<Integer> mySecondList = new ArrayList<>(Arrays.asList(1, 2));
-//
-//        //when
-//
-//        //then
-//        assert false;
-//    }
+    public static void canAddCollectionWithOnlyNullElements(List<Integer> list) {
+        //given
+        List<Integer> myList = emptyList(list);
+        //when
+        myList.addAll(Arrays.asList(null,null,null));
+        //then
+        assert myList.size() == 3;
+    }
 
 
     // boolean addAll(int index, Collection<? extends E> c);
@@ -108,7 +106,6 @@ public class ListTests {
         List<Integer> secondList = emptyList(list);
         secondList.add(2);
         secondList.add(3);
-
         //when
         list.addAll(1, secondList);
 
@@ -116,20 +113,77 @@ public class ListTests {
         assert list.get(1) == 2;
     }
 
+    // boolean addAll(int index, Collection<? extends E> c);
+    public static void afterAddingCollectionTrueIsReturned(List<Integer> list) {
+        //given
+        list.add(0);
+        list.add(1);
+        List<Integer> secondList = emptyList(list);
+        secondList.add(2);
+        secondList.add(3);
+        boolean listStateChanged = false;
+        //when
+        listStateChanged = list.addAll(1, secondList);
+        //then
+        assert listStateChanged;
+    }
+
+    // boolean addAll(int index, Collection<? extends E> c);
+    public static void canAddCollectionContainingOnlyNullsToSpecificIndex(List<Integer> list) {
+        //given
+        list.add(0);
+        list.add(1);
+        List<Integer> secondList = emptyList(list);
+        secondList.add(null);
+        secondList.add(null);
+        //when
+        list.addAll(1, secondList);
+        //then
+        assert list.get(1) == null && list.get(2) == null;
+    }
+
     //clear();
-    public static void afterClearingCollectionIsEmpty(List<Integer> list) {
+    public static void afterClearingListWithObjectListIsEmpty(List<Integer> list) {
         list.add(1);
         list.clear();
         assert list.size() == 0;
     }
 
+    //clear();
+    public static void afterClearingEmptyListListStaysEmpty(List<Integer> list) {
+        list.clear();
+        assert list.size() == 0;
+    }
+
     //boolean contains(Object o);
-    public static void checkWhetherListContainsSpecificObject(List<Integer> list) {
+    public static void returnsTrueIfListContainsSpecificElement(List<Integer> list) {
         //given
         list.add(5);
         boolean contains;
         //when
         contains = list.contains(5);
+        //then
+        assert contains;
+    }
+
+    //boolean contains(Object o);
+    public static void returnsFalseIfListDoesntContainSpecificElement(List<Integer> list) {
+        //given
+        list.add(0);
+        boolean contains;
+        //when
+        contains = list.contains(1);
+        //then
+        assert !contains;
+    }
+
+    //boolean contains(Object o);
+    public static void givenNullElementReturnsTrueIfListContainsThisElement(List<Integer> list) {
+        //given
+        list.add(null);
+        boolean contains;
+        //when
+        contains = list.contains(null);
         //then
         assert contains;
     }
