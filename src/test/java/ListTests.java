@@ -88,16 +88,16 @@ public class ListTests {
     }
 
     //addAll(Collection<? extends E> c)
-    public static void whenAddingElementsFromAnotherCollectionTheyAreAddedAtTheEnd(List<Integer> list) {
-        //given
-        List<Integer> myList = simpleListWithBasicValues(list);
-        List<Integer> mySecondList = new ArrayList<>(Arrays.asList(1, 2));
-
-        //when
-
-        //then
-        assert false;
-    }
+//    public static void whenAddingElementsFromAnotherCollectionTheyAreAddedAtTheEnd(List<Integer> list) {
+//        //given
+//        List<Integer> myList = simpleListWithBasicValues(list);
+//        List<Integer> mySecondList = new ArrayList<>(Arrays.asList(1, 2));
+//
+//        //when
+//
+//        //then
+//        assert false;
+//    }
 
 
     // boolean addAll(int index, Collection<? extends E> c);
